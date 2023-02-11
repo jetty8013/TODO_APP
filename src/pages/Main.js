@@ -5,11 +5,11 @@ import Profile from "../component/Profile";
 import TodoList from "../component/TodoList";
 
 function Main() {
-  return(
+  return (
     <>
-        <Profile />
-        <Calendar />
-        <TodoList />
+      <Profile />
+      <Calendar />
+      <TodoList />
     </>
   )
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React,{ useRef,useEffect,useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 
@@ -99,40 +99,40 @@ function Calendar() {
 
   const dispatch = useDispatch();
 
-  const creatWeeklyTitle = ['일','월','화','수','목','금','토'].map((el,idx) => {
+  const creatWeeklyTitle = ['일', '월', '화', '수', '목', '금', '토'].map((el, idx) => {
     return (
       <WeeklyTitle key={idx}>{el}</WeeklyTitle>
     )
   })
 
-  const lastDay = new Date(isDaily.yy,(isDaily.mm+1),0).getDate();
-  const creatDailyIcon = new Array(lastDay).fill(0).map((el,idx) => {
+  const lastDay = new Date(isDaily.yy, (isDaily.mm + 1), 0).getDate();
+  const creatDailyIcon = new Array(lastDay).fill(0).map((el, idx) => {
     return (
       <DailyBox key={idx} onClick={() => dailyClick(idx)}>
         <DailyIcons ref={ref => (dailyRef.current[idx] = ref)} />
-        <DailyTitle>{idx+1}</DailyTitle>
+        <DailyTitle>{idx + 1}</DailyTitle>
       </DailyBox>
     )
   })
 
   useEffect(() => {
-    dailyRef.current[isDaily.dd-1].style.backgroundColor = '#9747FF'
-  },[isDaily.dd])
+    dailyRef.current[isDaily.dd - 1].style.backgroundColor = '#9747FF'
+  }, [isDaily.dd])
 
   const dailyClick = (idx) => {
-    if(idx+1 !== isDaily.dd){
-      dispatch({type: 'UPDATE_DAY',payload: idx+1})
-      dailyRef.current[isDaily.dd-1].style.backgroundColor = '#48484A'
+    if (idx + 1 !== isDaily.dd) {
+      dispatch({ type: 'UPDATE_DAY', payload: idx + 1 })
+      dailyRef.current[isDaily.dd - 1].style.backgroundColor = '#48484A'
       setDaily((prevState) => {
-        return {...prevState, dd: idx+1}
+        return { ...prevState, dd: idx + 1 }
       })
     }
   }
 
-  return(
+  return (
     <>
       <CalendarWrapper>
-        <MonthlyBar><MonthlyTitle>{isDaily.yy}년 {isDaily.mm+1 < 10?'0'+(isDaily.mm+1):isDaily.mm+1}월</MonthlyTitle></MonthlyBar>
+        <MonthlyBar><MonthlyTitle>{isDaily.yy}년 {isDaily.mm + 1 < 10 ? '0' + (isDaily.mm + 1) : isDaily.mm + 1}월</MonthlyTitle></MonthlyBar>
         <WeeklyBar>{creatWeeklyTitle}</WeeklyBar>
         <DailyContainer>{creatDailyIcon}</DailyContainer>
       </CalendarWrapper>

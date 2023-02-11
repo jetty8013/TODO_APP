@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React,{ useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 const TodoListWrapper = styled.div`
@@ -49,17 +49,17 @@ function TodoList() {
   const [isTodo, setTodo] = useState(['목록이 없습니다'])
 
   useEffect(() => {
-    if(typeof state[state.dd] === 'undefined') setTodo(['목록이 없습니다'])
+    if (typeof state[state.dd] === 'undefined') setTodo(['목록이 없습니다'])
     else setTodo([...state[state.dd]])
-  },[state.dd])
+  }, [state.dd])
 
-  const CreateList = isTodo.map((el,idx) => {
+  const CreateList = isTodo.map((el, idx) => {
     return (
       <TodoListLi key={idx}><TodoContent>{el}</TodoContent></TodoListLi>
     )
   })
 
-  return(
+  return (
     <>
       <TodoListWrapper>
         <TodoListUl>{CreateList}</TodoListUl>

@@ -38,22 +38,22 @@ const ProfileName = styled.span`
 
 function Profile() {
 
-  return(
+  return (
     <>
-    <ProfileWrapper>
-      <ProfileContainer>
-        <IoPersonCircleSharp size={32}/>
-        <ProfileName>윤지원</ProfileName>
-      </ProfileContainer>
-      <ProfileContainer>
-        <IoPersonCircleSharp size={32}/>
-        <ProfileName>운동계정</ProfileName>
-      </ProfileContainer>
-      <ProfileContainer>
-        <IoPersonCircleSharp size={32}/>
-        <ProfileName>공부계정</ProfileName>
-      </ProfileContainer>
-    </ProfileWrapper>
+      <ProfileWrapper>
+        <ProfileContainer>
+          <IoPersonCircleSharp size={32} />
+          <ProfileName>윤지원</ProfileName>
+        </ProfileContainer>
+        <ProfileContainer>
+          <IoPersonCircleSharp size={32} />
+          <ProfileName>운동계정</ProfileName>
+        </ProfileContainer>
+        <ProfileContainer>
+          <IoPersonCircleSharp size={32} />
+          <ProfileName>공부계정</ProfileName>
+        </ProfileContainer>
+      </ProfileWrapper>
     </>
   )
 }

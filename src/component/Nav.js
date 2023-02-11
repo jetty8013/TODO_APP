@@ -27,7 +27,7 @@ const NavIcons = styled.div`
 
 function Nav() {
 
-  return(
+  return (
     <>
       <NavWrapper>
         <NavIcons><BiSearch size={24} /></NavIcons>
